@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "7ikecnmtjFK0oHz10WNsuDPxyRlNI6w+565jRrGcH4w=",
+  "Source": "QRCodeManagement.API",
+  "BasePath": "_content/QRCodeManagement.API",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
