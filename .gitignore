@@ -1,0 +1,18 @@
+# Build output
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+PubTmp/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.rsuser
+
+# Publish profiles can contain credentials
+*.pubxml.user
+
+# Local secrets
+appsettings.*.local.json
+.env
