@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [GuideX, GuideX12]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore guidex/QRCodeManagement.sln
+
+      - name: Build
+        run: dotnet build guidex/QRCodeManagement.sln -c Release --no-restore
+
+      - name: Test
+        run: dotnet test guidex/QRCodeManagement.sln -c Release --no-build
